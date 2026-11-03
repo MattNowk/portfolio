@@ -4,7 +4,7 @@ import portrait from '../assets/photo-de-moi-portrait.jpg'
 export const PROFILE = {
   firstName: 'Matthieu',
   fullName: 'Matthieu Nowak',
-  role: 'Développeur web full stack & architecte web',
+  role: 'Développeur web full stack et bientôt architecte web',
   availability: 'Disponible à partir du 1er décembre 2026',
   photo: {
     url: portrait,
