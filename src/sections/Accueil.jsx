@@ -16,8 +16,9 @@ function Accueil() {
     >
       <p className="accueil__role">{PROFILE.role}</p>
       <p className="accueil__intro">
-        Diplômé d’un Bac +5 Architecte Web, je conçois et développe des applications web de la
-        maquette à la mise en ligne, avec Symfony et React. Trois années d’alternance m’ont appris
+        Diplômé d’un Bac +4 Concepteur Développeur d’Applications, je passe le 23 novembre 2026
+        l’examen du Mastère Architecte Web (Bac +5). Je conçois et développe des applications web
+        de la maquette à la mise en ligne, avec Symfony et React. Trois années d’alternance m’ont appris
         à livrer des projets concrets, en équipe et en méthode agile.
       </p>
       <p className="accueil__intro">

@@ -11,7 +11,7 @@ import {
 // Contenu de la section « À propos de moi ».
 
 export const BIO = [
-  'Je m’appelle Matthieu Nowak, j’ai 24 ans. Diplômé d’un Bac +5 Architecte Web, je cumule trois années d’expérience en alternance, durant lesquelles j’ai conçu, développé et maintenu des sites et applications web.',
+  'Je m’appelle Matthieu Nowak, j’ai 24 ans. Diplômé d’un Bac +4 Concepteur Développeur d’Applications, je passe le 23 novembre 2026 l’examen du Mastère Architecte Web (Bac +5). Je cumule trois années d’expérience en alternance, durant lesquelles j’ai conçu, développé et maintenu des sites et applications web.',
   'Autonome, curieux et à l’aise en équipe, je cherche avant tout un environnement qui favorise la bienveillance, la cohésion d’équipe et la montée en compétences.',
 ]
 
