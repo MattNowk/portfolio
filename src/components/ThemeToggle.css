@@ -1,0 +1,28 @@
+/* Les deux icônes sont superposées : l'icône du thème actif est visible,
+   l'autre est tournée, réduite et transparente. */
+.theme-toggle {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle__icon {
+  position: absolute;
+  transition:
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.3s ease;
+}
+
+.theme-toggle__icon--sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.3);
+}
+
+:root[data-theme='light'] .theme-toggle__icon--sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+:root[data-theme='light'] .theme-toggle__icon--moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.3);
+}

@@ -1,0 +1,105 @@
+.culture {
+  margin-top: 4rem;
+}
+
+.culture__title {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+
+.culture__cards {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.culture__card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.culture__card-title svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: var(--color-accent);
+}
+
+/* Artistes : nom + lien vers le morceau */
+.culture__artists {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.5rem 1.5rem;
+}
+
+.culture__artists li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.culture__artists a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.culture__artists a:hover {
+  text-decoration: underline;
+}
+
+.culture__artists svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+/* Classements films et séries, avec affiches */
+.culture__posters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+  gap: 1.25rem 1rem;
+}
+
+/* Une entrée à plusieurs affiches prend une colonne par affiche */
+.culture__poster {
+  position: relative;
+  grid-column: span var(--covers);
+}
+
+.culture__poster-covers {
+  display: flex;
+  gap: 1rem;
+}
+
+.culture__poster-covers > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.culture__poster-title {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.culture__rank {
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px var(--color-shadow);
+}

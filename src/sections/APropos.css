@@ -1,0 +1,123 @@
+/* ----- Présentation : photo + texte ----- */
+
+.about__intro {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  margin-top: 2rem;
+}
+
+.about__photo {
+  --portrait-size: clamp(10rem, 22vw, 15rem);
+}
+
+.about__bio {
+  display: grid;
+  gap: 1rem;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--color-text-muted);
+}
+
+/* ----- Cartes ----- */
+
+.about__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.about__card--wide {
+  grid-column: 1 / -1;
+}
+
+/* Hard skills : une catégorie par colonne */
+.about__skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+}
+
+.about__skills dt {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.about__skills dd {
+  margin: 0;
+}
+
+.about__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.about__tag {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-size: 0.9rem;
+}
+
+.about__languages {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.about__languages li {
+  display: grid;
+}
+
+.about__languages span {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.about__interests {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.about__interests li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about__interests svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+/* ----- Responsive ----- */
+
+@media (max-width: 960px) {
+  .about__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about__cards > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .about__intro {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .about__cards {
+    grid-template-columns: 1fr;
+  }
+}

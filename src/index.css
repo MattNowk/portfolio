@@ -1,0 +1,204 @@
+/* ===== Thèmes ===== */
+
+/* Sombre (par défaut) : fond nuit violacé, accent violet lumineux */
+:root {
+  --color-bg: #0e0a1a;
+  --color-surface: #171127;
+  --color-border: #2e2446;
+  --color-text: #efeafc;
+  --color-text-muted: #a99fc6;
+  --color-accent: #8b5cf6;
+  --color-accent-hover: #a78bfa;
+  --color-on-accent: #ffffff;
+  --color-shadow: rgb(0 0 0 / 0.45);
+  --color-success: #34d399;
+
+  color-scheme: dark;
+}
+
+/* Clair : fond blanc, accent violet sombre */
+:root[data-theme='light'] {
+  --color-bg: #ffffff;
+  --color-surface: #f5f2fd;
+  --color-border: #e3dcf5;
+  --color-text: #1d1233;
+  --color-text-muted: #5d5079;
+  --color-accent: #5b21b6;
+  --color-accent-hover: #4c1d95;
+  --color-on-accent: #ffffff;
+  --color-shadow: rgb(59 22 120 / 0.2);
+  --color-success: #059669;
+
+  color-scheme: light;
+}
+
+/* ===== Mise en page ===== */
+
+:root {
+  --header-height: 4rem;
+  --gutter: 1.25rem;
+  --content-width: 1100px;
+  --fixed-offset: 1rem;
+  --radius: 8px;
+  --radius-pill: 999px;
+  --transition: 0.2s ease;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Sur grand écran, on laisse de la place à la barre de progression à droite. */
+@media (min-width: 1025px) {
+  :root {
+    --gutter: 6rem;
+    --fixed-offset: 1.75rem;
+  }
+}
+
+/* ===== Base ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Éléments réutilisables ===== */
+
+/* Tous les textes sont justifiés, sans couper les mots. */
+p,
+li,
+dd {
+  text-align: justify;
+}
+
+/* Les titres placés dans une liste ne sont pas étirés par la justification */
+li :is(h3, h4, h5) {
+  text-align: start;
+}
+
+.container {
+  width: min(var(--content-width), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.button:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.button svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+
+.button--small {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.button--outline {
+  background: transparent;
+  color: var(--color-accent);
+}
+
+.button--outline:hover {
+  color: var(--color-on-accent);
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.icon-button:hover {
+  background: var(--color-surface);
+  color: var(--color-accent);
+}
+
+.icon-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Texte lu par les lecteurs d'écran mais invisible à l'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

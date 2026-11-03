@@ -1,0 +1,101 @@
+.scroll-rail {
+  --marker-size: 2.75rem;
+
+  position: fixed;
+  top: 50%;
+  right: var(--fixed-offset);
+  z-index: 10;
+  width: var(--marker-size);
+  height: 60vh;
+  transform: translateY(-50%);
+}
+
+.scroll-rail__track {
+  position: absolute;
+  inset: 0 auto;
+  left: 50%;
+  width: 4px;
+  translate: -50%;
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.scroll-rail__fill {
+  height: 100%;
+  background: var(--color-accent);
+  transform-origin: top;
+}
+
+.scroll-rail__item {
+  position: absolute;
+  top: calc(var(--position) * 100%);
+  left: 0;
+  translate: 0 -50%;
+}
+
+.scroll-rail__marker {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--marker-size);
+  height: var(--marker-size);
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    border-color var(--transition),
+    scale var(--transition);
+}
+
+.scroll-rail__marker svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.scroll-rail__marker.is-reached {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.scroll-rail__marker.is-active {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  scale: 1.15;
+}
+
+.scroll-rail__marker:hover {
+  scale: 1.15;
+}
+
+/* Libellé affiché au survol, à gauche du repère */
+.scroll-rail__label {
+  position: absolute;
+  right: calc(100% + 0.75rem);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  translate: 0.5rem;
+  pointer-events: none;
+  transition: opacity var(--transition), translate var(--transition);
+}
+
+.scroll-rail__marker:hover .scroll-rail__label,
+.scroll-rail__marker:focus-visible .scroll-rail__label {
+  opacity: 1;
+  translate: 0;
+}
+
+/* Trop encombrant sur tablette et mobile : le menu suffit. */
+@media (max-width: 1024px) {
+  .scroll-rail {
+    display: none;
+  }
+}

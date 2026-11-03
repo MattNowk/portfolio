@@ -1,0 +1,54 @@
+.contact__intro {
+  color: var(--color-text-muted);
+}
+
+.contact__card {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  max-width: 40rem;
+  margin: 2.5rem auto 0;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius) * 2);
+  background: var(--color-bg);
+  text-align: center;
+}
+
+.contact__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-accent);
+}
+
+.contact__email {
+  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.contact__email:hover {
+  text-decoration: underline;
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Le bouton « Copier » hérite des styles de .button */
+.contact__actions button {
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .contact__actions > * {
+    justify-content: center;
+    width: 100%;
+  }
+}
